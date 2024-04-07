@@ -19,9 +19,9 @@ The project aims to leverage a knowledge graph to construct a system for cultura
 This subsystem focuses on modeling museum artifact knowledge into a graph format for the development and application of knowledge services and recommendation systems. It utilizes crawler technology, natural language processing, and knowledge graph construction to automate artifact knowledge extraction, mining, and graph representation.
 
 ### 海外文物知识服务 - Web_Service_System
-通过知识图谱构建子系统获取的数据，该子系统为用户提供文物数据浏览、查询搜索和信息可视化等功能。
+通过知识图谱构建子系统获取的数据，该子系统为用户提供文物数据浏览、查询搜索和信息可视化等功能。同时，用户可以收藏自己喜欢的文物，可以给喜欢的文物点赞以及评论。为文物爱好者提供一个交流和分享的平台。
 
-This subsystem uses data obtained from the Knowledge Graph Construction subsystem to provide users with functions such as browsing cultural relics data, searching for cultural relics data, and visualizing cultural relic information through a web program.
+With the data obtained from the knowledge graph construction subsystem, the subsystem provides users with functions such as cultural relics data browsing, query search and information visualization. At the same time, users can collect their favorite cultural relics and can give likes as well as comments to their favorite cultural relics. It provides a communication and sharing platform for heritage enthusiasts.
 
 ### 知识问答 - Q&ASystem
 知识问答子系统是一个基于自然语言处理技术的问答系统，旨在为用户提供高效、准确的知识查询和问题解答服务。

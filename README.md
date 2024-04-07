@@ -13,7 +13,8 @@ This project is a system for showcasing cultural relics and providing services b
 The project aims to leverage a knowledge graph to construct a system for cultural relics display and services, offering users comprehensive cultural relics knowledge services and a user-friendly relics browsing experience. Users can gain insights into cultural relics-related knowledge, maintain personal learning records, and utilize collection features.
 
 ## 子系统 - Subsystems
-知识图谱构建 - Knowledge_Map_System
+
+### 知识图谱构建 - Knowledge_Map_System
 这个系统的目标是将博物馆文物的知识转化为图形模式，以便后续开发和应用知识服务和推荐系统。利用网络爬虫技术、自然语言处理技术和知识图谱构建技术，实现文物知识的自动提取、挖掘和图形化呈现。
 
 This subsystem focuses on modeling museum artifact knowledge into a graph format for the development and application of knowledge services and recommendation systems. It utilizes crawler technology, natural language processing, and knowledge graph construction to automate artifact knowledge extraction, mining, and graph representation.

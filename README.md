@@ -30,7 +30,7 @@ With the data obtained from the knowledge graph construction subsystem, the subs
 The Knowledge Q&A subsystem is a question-answering system based on natural language processing technology, aiming to efficiently and accurately address user knowledge queries and provide problem-solving services.
 
 ### 掌上博物馆 - Museum_App
-该子系统提供用户浏览、搜索、收藏、评论等功能，用户可以在移动设备上浏览文物信息、展览信息和资讯，与其他用户互动，分享心得体验。
+该子系统提供用户在移动设备上浏览文物信息，与其他用户互动，分享心得体验的功能，用户可以浏览、搜索、收藏、发布评论，。
 
 This subsystem offers users browsing, searching, collecting, and commenting features. Users can access cultural relic information, exhibition details, and museum culture knowledge on their mobile devices, interact with others, and share experiences.
 

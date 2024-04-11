@@ -1,39 +1,42 @@
-# software-project-of-2105
-海外藏中国文物知识管理与服务平台
+# 海外文物知识服务子系统 
+---
+编写vue前端，Django后端，使用知识图谱和Mysql数据库构建子系统获取的数据，实现数据浏览、查询、可视化等服务。
+## 主要功能
 
-## Project Overview - 项目概述
+### 数据浏览：
+支持多种形式展示的浏览功能：
+1. 提供基本的筛选、排序功能，可按照文物类型、文物年代、博物馆等多种基础信息进行索引、筛选、排序方式浏览文物信息以方便用户的使用。
+2. 提供查看文物详情功能，显示文物的详细数据，如文本、图像等信息，点击文物图片，可以进行放大缩小。
+3. 相关文物推荐功能，在该文物页面显示相关文物。
+### 数据查询：
+支持文物的简单查询功能和高级查询功能。简单查询根据输入的关键字，如文物名称、博物馆名称、文物年代等进行查询。高级查询可以对文物的多个字段进行限定查询。
+### 数据可视化显示：
+文物时间轴：按照时间轴的方式、展示各个时段的文物信息、时间等信息。
+### 用户个人信息管理：
+用户可以注册登录该系统，设置用户名密码等个人信息。
 
-该项目是一个基于知识图谱的文物展示与服务系统，包括知识服务、海外文物知识服务、掌上博物馆、用户个人中心和后台管理五个子系统。
+---
+## 主页
+### 文物时间轴
+可在首页最上方设置时间轴显示不同年代的文物，通过鼠标触碰到不同时间在时间轴下放显示相关文物图片以及信息，通过鼠标点击跳转到相关信息界面。
+### 文物搜索 
+1. 通过输入的信息在数据库中进行查询，查询结果按照一定顺序排列，用户和选择按照时间、类型等条件重新排序，将查询结果显示到Web界面。
+2. 通过点击查询到的结果跳转到包括图片、文本的详细内容的界面。
+3. 设置搜索框通过更加细致的内容进行高级搜索
+4. 在页面下方根据搜索内容的相关度（涉及数据挖掘）为用户推荐文物，或者按照其他规则推荐。
+### 推荐
+通过收集用户最近查询的信息推荐高搜索率的内容
+### 用户
+1. 在主页右上方设置用户标志，可进行登录注册选择
+2. 点击不同内容后跳转页面进行登录注册
+3. 登录后点击可进入个人中心界面，查看近期搜索、收藏、喜爱等内容
+4. 个人中心界面包括退出登录功能
+## 相关技术
+### 数据库
+根据收集到的信息建立有关的数据库、索引、视图，方便查询。
+### 前端后端技术及接口(框架)
+vue+Django/html/PHP/JavaScript/CSS
+### 
 
-This project is a system for showcasing cultural relics and providing services based on a knowledge graph. It comprises five subsystems: Knowledge Service, Overseas Cultural Relics Knowledge Service, Mobile Museum, User Personal Center, and Backend Management.
 
-## 背景 - Background
-我国目前缺乏一个专门针对海外流失文物主题的，具有完善的展示、查询、交互功能的一体化数字平台。该项目打造集信息展现、图片展示、文物搜索和智能问答于一体的海外流失文物展现平台，填补国内相关领域的空白。建立面向海外文物的垂直领域知识图谱，为问答领域提供更多专业化数据
 
-The project aims to leverage a knowledge graph to construct a system for cultural relics display and services, offering users comprehensive cultural relics knowledge services and a user-friendly relics browsing experience. Users can gain insights into cultural relics-related knowledge, maintain personal learning records, and utilize collection features.
-
-## 子系统 - Subsystems
-知识图谱构建 - Knowledge_Map_System
-这个系统的目标是将博物馆文物的知识转化为图形模式，以便后续开发和应用知识服务和推荐系统。利用网络爬虫技术、自然语言处理技术和知识图谱构建技术，实现文物知识的自动提取、挖掘和图形化呈现。
-
-This subsystem focuses on modeling museum artifact knowledge into a graph format for the development and application of knowledge services and recommendation systems. It utilizes crawler technology, natural language processing, and knowledge graph construction to automate artifact knowledge extraction, mining, and graph representation.
-
-### 海外文物知识服务 - Web_Service_System
-通过知识图谱构建子系统获取的数据，该子系统为用户提供文物数据浏览、查询搜索和信息可视化等功能。
-
-This subsystem uses data obtained from the Knowledge Graph Construction subsystem to provide users with functions such as browsing cultural relics data, searching for cultural relics data, and visualizing cultural relic information through a web program.
-
-### 知识问答 - Q&ASystem
-知识问答子系统是一个基于自然语言处理技术的问答系统，旨在为用户提供高效、准确的知识查询和问题解答服务。
-
-The Knowledge Q&A subsystem is a question-answering system based on natural language processing technology, aiming to efficiently and accurately address user knowledge queries and provide problem-solving services.
-
-### 掌上博物馆 - Museum_App
-该子系统提供用户浏览、搜索、收藏、评论等功能，用户可以在移动设备上浏览文物信息、展览信息和资讯，与其他用户互动，分享心得体验。
-
-This subsystem offers users browsing, searching, collecting, and commenting features. Users can access cultural relic information, exhibition details, and museum culture knowledge on their mobile devices, interact with others, and share experiences.
-
-### 后台管理子系统 - Content_Manage_System
-后台管理子系统是管理中心，提供友好界面，管理员可以方便地管理文物数据、用户信息等。
-
-The Backend Management subsystem serves as the system's administrative hub, providing a user-friendly interface for administrators to manage cultural relics data, user information, etc.

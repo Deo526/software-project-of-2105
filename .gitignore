@@ -1,0 +1,8 @@
+*.pyc
+
+/mybill/migrations/
+
+/static
+/media
+
+

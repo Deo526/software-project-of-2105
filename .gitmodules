@@ -1,0 +1,3 @@
+[submodule "Knowledge Map System/code"]
+	path = Knowledge Map System/code
+	url = git@github.com:Uzhia/KMS.git

@@ -2,5 +2,5 @@
 *.swp
 /static
 /media
-
+*.log
 

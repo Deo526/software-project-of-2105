@@ -8,4 +8,4 @@
 
 ### meetings 
 
-`meetings`文件夹存放着子系统的回忆记录
+`meetings`文件夹存放着子系统的会议记录

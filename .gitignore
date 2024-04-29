@@ -1,7 +1,7 @@
 *.pyc
 *.swp
-/static
+Sever/web_service_system/static/
 /media
-
+*.log
 
 

@@ -1,25 +1,58 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
+import Layout from "../layout/Layout.vue";
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'Layout',
+    component: Layout,
+    redirect: "/login",
+    children: [
+      {
+        path: 'home',
+        name: 'Home',
+        component: () => import("@/views/Home"),
+        meta: { title: 'Home' }
+      },
+      {
+        path: 'search',
+        name: 'Search',
+        component: () => import("@/views/Search"),
+        meta: { title: 'Search' }
+      },
+      {
+        path: 'timeline',
+        name: 'TimeLine',
+        component: () => import("@/views/TimeLine"),
+        meta: { title: 'TimeLine' }
+      },
+      {
+        path: 'knowledgeMap',
+        name: 'KnowledgeMap',
+        component: () => import("@/views/KnowledgeMap"),
+        meta: { title: 'KnowledgeMap' }
+      }
+    ]
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/login',
+    name: 'Login',
+    component: () => import("@/views/LoginView.vue"),
+    meta: { title: 'login Page' } // 设置页面标题
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import("@/views/RegisterView.vue"),
+    meta: { title: 'Register Page' } // 设置页面标题
+  },
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  window.document.title = to.meta.title
+  next()
+})
 export default router

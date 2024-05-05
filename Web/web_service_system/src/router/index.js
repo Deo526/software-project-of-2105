@@ -5,7 +5,7 @@ const routes = [
     path: '/',
     name: 'Layout',
     component: Layout,
-    redirect: "/login",
+    redirect: "/firstPage",
     children: [
       {
         path: 'home',
@@ -32,6 +32,12 @@ const routes = [
         meta: { title: 'KnowledgeMap' }
       }
     ]
+  },
+  {
+    path: '/firstPage',
+    name: 'FirstPage',
+    component: () => import("@/views/FirstPage"),
+    meta: { title: 'FirstPage' }
   },
   {
     path: '/login',

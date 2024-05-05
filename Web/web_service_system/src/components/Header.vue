@@ -43,7 +43,7 @@ export default {
   // },
   methods: {
     update() {
-      this.$router.push("/login")
+      this.$router.push("/firstPage")
     }
   }
 }

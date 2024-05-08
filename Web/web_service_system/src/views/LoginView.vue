@@ -44,6 +44,7 @@
 // import { getCookie, deleteCookie } from "@/utils/cookie";
 
 import RegisterView from "@/views/RegisterView.vue";
+import {ElMessage, ElMessageBox} from "element-plus";
 
 export default {
 
@@ -85,33 +86,37 @@ export default {
 
   methods: {
     login() {
-      this.$router.push("/home")//执行完跳转页面，注册过
-      // this.$refs.form.validate((valid) => {
-      //   if(valid) {
-      //     request.post("/user/login", this.form).then(res => {
-      //       if(res.msg === "success") {
-      //         this.$router.push("/home")
-      //       } else {
-      //         this.$message({
-      //           type: "error",
-      //           message: res.msg,
-      //           customClass: "font"
-      //         })
-      //       }
-      //     })
-      //   } else {
-      //     this.$message({
-      //       type: "error",
-      //       message: "请输入用户名和密码",
-      //       customClass: "font"
-      //     })
-      //   }
-      // })
-    },
-    Register(){
-      this.$router.push("/register")//执行完跳转页面，注册过
+
+      this.loading = true; // 启用加载状态
+
+      this.$axios.post('http://8.130.122.31:8000/user/login/', {
+        username: this.form.username,
+        password: this.form.password
+      })
+          .then(response => {
+            if (response.status !== 200) {
+              ElMessageBox.alert('登录失败，请检查用户名和密码', '提示', {
+                confirmButtonText: '确定',
+                type: 'error'
+              });
+              // 登录失败，跳转到登录页面
+              this.$router.push("/login");
+            } else {
+              // 登录成功，跳转到首页
+              this.$router.push("/home");
+            }
+          })
+          .catch(error => {
+            // 处理请求错误
+            console.error('登录请求失败:', error);
+            // 显示错误提示给用户
+            ElMessage.error('登录失败，请稍后重试');
+          })
+          .finally(() => {
+            this.loading = false; // 关闭加载状态
+          });
     }
-  }
+    }
 }
 
 </script>

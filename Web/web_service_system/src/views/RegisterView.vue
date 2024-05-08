@@ -57,6 +57,8 @@
 
 <script>
 
+//import {ElMessageBox} from "element-plus";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Register",
@@ -90,19 +92,40 @@ export default {
             })
             return;
           }
-          // request.post("/user/register", this.form).then(res => {
-          //   if(res.msg === "success") {
-          //     this.$router.push("/login")
-          //   }  else {
-          //     this.$message({
-          //       type: "error",
-          //       message: res.msg
-          //     })
-          //   }
-          // })
+
+          this.loading = true; // 启用加载状态
+          // 发送注册请求
+          this.$axios.post('http://8.130.122.31:8000/user/register/', {
+            username: this.form.username,
+            password: this.form.password,
+            email: this.form.email,
+            confirm: this.form.confirm
+          })
+              .then(response => {
+                if (response.status === 201) {
+                  // 注册成功
+                  this.$message({
+                    type: 'success',
+                    message: '注册成功，请返回登录界面登录！'
+                  });
+                  // 可以跳转到登录页面
+                  this.$router.push("/login");
+                } else {
+                  // 注册失败
+                  this.$message.error('注册失败，请检查信息！');
+                }
+              })
+              .catch(error => {
+                console.error('注册请求失败:', error);
+                this.$message.error('注册失败，请稍后重试！');
+              })
+              .finally(() => {
+                this.loading = false; // 关闭加载状态
+              });
         }
-      })
+      });
     },
+
     goToLogin(){
       this.$router.push("/login")
     }

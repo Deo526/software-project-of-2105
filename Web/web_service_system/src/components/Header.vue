@@ -10,8 +10,8 @@
         海外文物知识系统
       </el-button>
     </div>
-    <div style="padding-top: 10px; padding-left: 15px">
-      <el-button @click="update" link style="font-weight: bold; font-size: 20px; color: white; margin-left: 1100px;" >
+    <div style="padding-top: 10px; padding-left: 15px; margin-left: 70%">
+      <el-button @click="update" link style="font-weight: bold; font-size: 20px; color: white; " >
         退出登录
       </el-button>
     </div>
@@ -43,7 +43,7 @@ export default {
   // },
   methods: {
     update() {
-      this.$router.push("/login")
+      this.$router.push("/firstPage")
     }
   }
 }

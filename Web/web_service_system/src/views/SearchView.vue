@@ -8,7 +8,7 @@
         </el-col>
     </el-row>
 
-  <el-scrollbar height="600px">
+  <!-- <el-scrollbar height="600px">
     <el-card style="max-width: 480px" v-for="user in users" :key="user.id" class="scrollbar-demo-item">
       <template #header>
         <div class="username">{{ user.username }}</div>
@@ -18,7 +18,20 @@
         style="width: 100%"
       />
     </el-card>
-  </el-scrollbar>
+  </el-scrollbar> -->
+  <el-scrollbar height="600px">
+  <div class="container">
+    <el-card style="max-width: 480px" v-for="user in users" :key="user.id" class="scrollbar-demo-item">
+      <template #header>
+        <div class="username">{{ user.username }}</div>
+      </template>
+      <img
+        :src="user.photo"
+        style="width: 100%"
+      />
+    </el-card>
+  </div>
+</el-scrollbar>
 
 </template>
 
@@ -63,5 +76,8 @@ setup(){
 </script>
 
 <style scoped>
-
+.container {
+  column-count: 2; /* 将容器分成两列 */
+  column-gap: 20px; /* 列之间的间隔 */
+}
 </style>

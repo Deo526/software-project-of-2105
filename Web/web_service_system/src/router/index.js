@@ -14,9 +14,9 @@ const routes = [
         meta: { title: 'Home' }
       },
       {
-        path: 'search',
+        path: 'Search',
         name: 'Search',
-        component: () => import("@/views/Search"),
+        component: () => import("@/views/SearchView"),
         meta: { title: 'Search' }
       },
       {

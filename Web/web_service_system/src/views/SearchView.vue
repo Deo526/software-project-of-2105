@@ -21,7 +21,7 @@
   </el-scrollbar> -->
   <el-scrollbar height="700px">
   <div class="container">
-    <el-card style="max-width: 480px" v-for="user in users" :key="user.id" class="scrollbar-demo-item">
+    <el-card style="max-width: 480px" shadow="hover" v-for="user in users" :key="user.id" class="scrollbar-demo-item">
       <template #header>
         <div class="username">{{ user.username }}</div>
       </template>
@@ -79,5 +79,13 @@ setup(){
 .container {
   column-count: 2; /* 将容器分成两列 */
   column-gap: 20px; /* 列之间的间隔 */
+}
+
+.container .scrollbar-demo-item {
+  margin-bottom: 10px;
+}
+
+.scrollbar-demo-item:hover {
+  cursor: pointer;
 }
 </style>

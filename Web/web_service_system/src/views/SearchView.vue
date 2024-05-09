@@ -19,7 +19,7 @@
       />
     </el-card>
   </el-scrollbar> -->
-  <el-scrollbar height="600px">
+  <el-scrollbar height="700px">
   <div class="container">
     <el-card style="max-width: 480px" v-for="user in users" :key="user.id" class="scrollbar-demo-item">
       <template #header>

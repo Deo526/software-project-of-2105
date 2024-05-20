@@ -1,0 +1,9 @@
+*.pyc
+*.swp
+Sever/web_service_system/static/
+/media
+Sever/web_service_system/artifact/migrations/
+Sever/web_service_system/user/migrations/
+*.log
+
+
